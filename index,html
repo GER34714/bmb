@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMB Premium Boat | Tapicería premium para embarcaciones</title>
+  <meta name="description" content="Tapicería premium para embarcaciones. Butacas, toldería, interiores a medida y terminaciones de alto nivel." />
+
+  <meta property="og:title" content="BMB Premium Boat | Tapicería premium para embarcaciones" />
+  <meta property="og:description" content="Butacas, toldería, interiores a medida y terminaciones premium para embarcaciones." />
+  <meta property="og:image" content="https://iili.io/qjIwEEF.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#06080d;
+      --bg-soft:#0b1018;
+      --surface:rgba(255,255,255,.08);
+      --surface-2:rgba(255,255,255,.05);
+      --border:rgba(255,255,255,.14);
+      --text:#f4f7fb;
+      --muted:#b7c0d1;
+      --accent:#39ff9c;
+      --accent-2:#6ee7ff;
+      --shadow:0 20px 60px rgba(0,0,0,.38);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:18px;
+      --max:1240px;
+      --nav-h:78px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(57,255,156,.11), transparent 20%),
+        radial-gradient(circle at top left, rgba(110,231,255,.08), transparent 22%),
+        linear-gradient(180deg, #04060a 0%, #071019 45%, #05070b 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    body.light{
+      --bg:#eef4f9;
+      --bg-soft:#f7fbff;
+      --surface:rgba(255,255,255,.78);
+      --surface-2:rgba(255,255,255,.56);
+      --border:rgba(10,20,35,.09);
+      --text:#0f1725;
+      --muted:#4f6278;
+      --accent:#0fbf73;
+      --accent-2:#0aa6d8;
+      --shadow:0 20px 50px rgba(18,33,56,.10);
+      background:
+        radial-gradient(circle at top right, rgba(15,191,115,.10), transparent 22%),
+        radial-gradient(circle at top left, rgba(10,166,216,.08), transparent 18%),
+        linear-gradient(180deg, #edf4fa 0%, #f7fbff 50%, #edf3f8 100%);
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin-inline:auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(4,7,12,.56);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    body.light .site-header{
+      background:rgba(244,249,255,.72);
+      border-bottom:1px solid rgba(10,20,35,.06);
+    }
+
+    .nav{
+      min-height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .brand-copy{
+      min-width:0;
+    }
+
+    .brand-copy strong{
+      display:block;
+      font-size:1rem;
+      line-height:1.05;
+      letter-spacing:.02em;
+    }
+
+    .brand-copy span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:.84rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      font-size:.96rem;
+      font-weight:600;
+      padding:12px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.05);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .theme-toggle,
+    .menu-toggle{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:14px;
+      background:var(--surface);
+      color:var(--text);
+      border:1px solid var(--border);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .theme-toggle:hover,
+    .menu-toggle:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.12);
+    }
+
+    .menu-toggle{
+      display:none;
+    }
+
+    .nav-cta{
+      padding:13px 18px;
+      border-radius:999px;
+      border:1px solid rgba(57,255,156,.30);
+      background:linear-gradient(135deg, rgba(57,255,156,.18), rgba(110,231,255,.12));
+      color:var(--text);
+      font-weight:700;
+      white-space:nowrap;
+      box-shadow:0 12px 30px rgba(57,255,156,.14);
+    }
+
+    .hero{
+      padding:38px 0 18px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      position:relative;
+      padding:34px;
+      border-radius:var(--radius-xl);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      inset:auto auto -40px -40px;
+      width:180px;
+      height:180px;
+      background:radial-gradient(circle, rgba(57,255,156,.14), transparent 70%);
+      z-index:-1;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:#d8fff1;
+      font-size:.84rem;
+      font-weight:700;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    body.light .eyebrow{
+      color:#0b6d51;
+      background:rgba(15,191,115,.08);
+      border-color:rgba(15,191,115,.14);
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 18px var(--accent);
+      flex-shrink:0;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:clamp(2.25rem, 4.8vw, 4.6rem);
+      line-height:.97;
+      letter-spacing:-.05em;
+      max-width:11ch;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      max-width:62ch;
+      font-size:1.06rem;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      color:#07110b;
+      background:linear-gradient(135deg, var(--accent), #98ffd3);
+      box-shadow:0 18px 35px rgba(57,255,156,.24);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 22px 40px rgba(57,255,156,.28);
+    }
+
+    .btn-secondary{
+      color:var(--text);
+      background:var(--surface);
+      border-color:var(--border);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.11);
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .meta-chip{
+      padding:12px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:600;
+    }
+
+    .hero-media{
+      position:relative;
+    }
+
+    .hero-frame{
+      position:relative;
+      border-radius:32px;
+      overflow:hidden;
+      min-height:560px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      background:#030508;
+      isolation:isolate;
+    }
+
+    .hero-frame::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.18)),
+        radial-gradient(circle at top right, rgba(57,255,156,.13), transparent 28%);
+      pointer-events:none;
+    }
+
+    .hero-frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .hero-badge{
+      position:absolute;
+      left:22px;
+      bottom:22px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:rgba(5,10,18,.62);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(14px);
+      max-width:min(78%, 320px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-badge strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .hero-badge span{
+      color:#d7deea;
+      font-size:.92rem;
+      line-height:1.5;
+    }
+
+    body.light .hero-badge span{
+      color:#405166;
+    }
+
+    .section{
+      padding:42px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+    }
+
+    .section-kicker{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-size:.82rem;
+      font-weight:800;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .section h2{
+      margin:0;
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      letter-spacing:-.04em;
+      line-height:1.02;
+    }
+
+    .section-head p{
+      max-width:560px;
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .catalog-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border:1px solid var(--border);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      backdrop-filter:blur(18px);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(57,255,156,.24);
+      box-shadow:0 24px 56px rgba(0,0,0,.34);
+    }
+
+    .card-media{
+      position:relative;
+      aspect-ratio:1.14 / 1;
+      background:#020407;
+      overflow:hidden;
+    }
+
+    .card-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .55s ease;
+    }
+
+    .card:hover .card-media img{
+      transform:scale(1.06);
+    }
+
+    .card-body{
+      padding:18px 18px 20px;
+    }
+
+    .card-body h3{
+      margin:0 0 8px;
+      font-size:1.12rem;
+      letter-spacing:-.02em;
+    }
+
+    .card-body p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.97rem;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr .95fr;
+      grid-auto-rows:220px;
+      gap:16px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid var(--border);
+      background:#020508;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .6s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.07);
+    }
+
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.58));
+      pointer-events:none;
+    }
+
+    .gallery-caption{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:14px;
+      z-index:2;
+      padding:13px 14px;
+      border-radius:16px;
+      background:rgba(7,10,16,.44);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(12px);
+    }
+
+    .gallery-caption strong{
+      display:block;
+      font-size:.97rem;
+      margin-bottom:4px;
+    }
+
+    .gallery-caption span{
+      display:block;
+      color:#d8e0eb;
+      font-size:.88rem;
+      line-height:1.45;
+    }
+
+    .gallery-item.tall{grid-row:span 2}
+    .gallery-item.wide{grid-column:span 2}
+    .gallery-item.big{grid-column:span 2;grid-row:span 2}
+
+    .value-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .value-card{
+      padding:22px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .value-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:1.02rem;
+    }
+
+    .value-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.96rem;
+    }
+
+    .cta-panel{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:20px;
+      padding:30px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at right top, rgba(57,255,156,.12), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .cta-panel h3{
+      margin:0 0 8px;
+      font-size:clamp(1.5rem, 2.6vw, 2.4rem);
+      letter-spacing:-.04em;
+    }
+
+    .cta-panel p{
+      margin:0;
+      color:var(--muted);
+      max-width:620px;
+      line-height:1.7;
+    }
+
+    .site-footer{
+      padding:34px 0 100px;
+    }
+
+    .footer-box{
+      padding:22px 24px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .footer-credit{
+      white-space:nowrap;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .footer-credit a{
+      color:var(--accent);
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.94);
+      box-shadow:0 18px 40px rgba(0,0,0,.24);
+      transition:.25s ease;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-3px) scale(1.03);
+    }
+
+    .whatsapp-float img{
+      width:34px;
+      height:34px;
+      object-fit:contain;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(34px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.from-left{transform:translateX(-58px)}
+    .reveal.from-right{transform:translateX(58px)}
+    .reveal.show{
+      opacity:1;
+      transform:translate(0,0);
+    }
+
+    @media (max-width: 1120px){
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-frame{
+        min-height:470px;
+      }
+
+      .catalog-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .value-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+        grid-auto-rows:220px;
+      }
+
+      .gallery-item.big,
+      .gallery-item.wide{
+        grid-column:span 2;
+      }
+    }
+
+    @media (max-width: 860px){
+      .nav-links{
+        position:fixed;
+        top:calc(var(--nav-h) + 10px);
+        left:16px;
+        right:16px;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+        padding:14px;
+        border-radius:22px;
+        background:rgba(5,10,18,.94);
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:var(--shadow);
+        opacity:0;
+        pointer-events:none;
+        transform:translateY(-10px);
+        transition:.25s ease;
+      }
+
+      body.light .nav-links{
+        background:rgba(250,253,255,.97);
+      }
+
+      .nav-links.open{
+        opacity:1;
+        pointer-events:auto;
+        transform:translateY(0);
+      }
+
+      .nav-links a{
+        border-radius:14px;
+        background:rgba(255,255,255,.04);
+      }
+
+      .menu-toggle{
+        display:grid;
+      }
+
+      .nav-cta{
+        display:none;
+      }
+
+      .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .cta-panel{
+        grid-template-columns:1fr;
+      }
+
+      .footer-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(var(--max), calc(100% - 22px));
+      }
+
+      .hero{
+        padding-top:20px;
+      }
+
+      .hero-copy{
+        padding:24px 18px;
+        border-radius:24px;
+      }
+
+      .hero h1{
+        max-width:100%;
+        font-size:clamp(2rem, 11vw, 3rem);
+      }
+
+      .hero p{
+        font-size:.98rem;
+      }
+
+      .hero-frame{
+        min-height:320px;
+        border-radius:24px;
+      }
+
+      .hero-badge{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        max-width:none;
+      }
+
+      .catalog-grid,
+      .gallery-grid,
+      .value-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-grid{
+        grid-auto-rows:230px;
+      }
+
+      .gallery-item.big,
+      .gallery-item.wide,
+      .gallery-item.tall{
+        grid-column:auto;
+        grid-row:auto;
+      }
+
+      .card-media{
+        aspect-ratio:1.08 / 1;
+      }
+
+      .theme-toggle,
+      .menu-toggle{
+        width:42px;
+        height:42px;
+      }
+
+      .brand-logo{
+        width:48px;
+        height:48px;
+        border-radius:14px;
+      }
+
+      .brand-copy strong{
+        font-size:.94rem;
+      }
+
+      .brand-copy span{
+        font-size:.78rem;
+      }
+
+      .whatsapp-float{
+        width:54px;
+        height:54px;
+        right:14px;
+        bottom:14px;
+      }
+
+      .whatsapp-float img{
+        width:31px;
+        height:31px;
+      }
+
+      .site-footer{
+        padding-bottom:92px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo">
+          <img src="https://iili.io/qjzd1Jn.jpg" alt="Logo BMB Premium Boat" />
+        </div>
+        <div class="brand-copy">
+          <strong>BMB Premium Boat</strong>
+          <span>Tapicería premium para embarcaciones</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="mobileMenu">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Modelos</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#diferenciales">Diferenciales</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3V5.2M12 18.8V21M21 12H18.8M5.2 12H3M18.364 5.636L16.808 7.192M7.192 16.808L5.636 18.364M18.364 18.364L16.808 16.808M7.192 7.192L5.636 5.636M15.5 12A3.5 3.5 0 1 1 8.5 12A3.5 3.5 0 0 1 15.5 12Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <a class="nav-cta" href="https://wa.me/5491164499481?text=Hola!%20Quiero%20consultar%20por%20tapiceria%20premium%20para%20embarcaciones." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal from-left">
+          <span class="eyebrow">Fabricación propia</span>
+          <h1>Tapicería premium para embarcaciones</h1>
+          <p>
+            Diseño, confort y terminaciones a medida para elevar la presencia de cada embarcación con una estética más limpia, exclusiva y profesional.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5491164499481?text=Hola!%20Quiero%20asesoramiento%20para%20mi%20embarcacion." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#catalogo">Ver modelos</a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="meta-chip">Butacas premium</span>
+            <span class="meta-chip">Toldería náutica</span>
+            <span class="meta-chip">Interiores a medida</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal from-right">
+          <div class="hero-frame">
+            <img src="https://iili.io/qjIwEEF.jpg" alt="Tapicería premium para embarcaciones BMB" />
+            <div class="hero-badge">
+              <strong>Diseño, confort y presencia</strong>
+              <span>Terminaciones de alto nivel para una experiencia más exclusiva en cada navegación.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Modelos destacados</span>
+            <h2>Catálogo visual premium</h2>
+          </div>
+          <p>
+            Una selección pensada para mostrar distintas líneas de producto, con foco en diseño, terminación y presencia.
+          </p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="card reveal from-left">
+            <div class="card-media">
+              <img src="https://iili.io/qjzUiMl.jpg" alt="Butacas premium para embarcaciones" />
+            </div>
+            <div class="card-body">
+              <h3>Butacas premium</h3>
+              <p>Confort, presencia y terminaciones de alto nivel para una navegación más exclusiva.</p>
+            </div>
+          </article>
+
+          <article class="card reveal from-right">
+            <div class="card-media">
+              <img src="https://iili.io/qjzU4tf.jpg" alt="Butacas sport para embarcaciones" />
+            </div>
+            <div class="card-body">
+              <h3>Butacas sport</h3>
+              <p>Diseño envolvente con una estética más firme, moderna y funcional.</p>
+            </div>
+          </article>
+
+          <article class="card reveal from-left">
+            <div class="card-media">
+              <img src="https://iili.io/qjzUPn4.jpg" alt="Toldería náutica premium" />
+            </div>
+            <div class="card-body">
+              <h3>Toldería náutica</h3>
+              <p>Protección, estructura y una terminación pensada para durar y lucirse.</p>
+            </div>
+          </article>
+
+          <article class="card reveal from-right">
+            <div class="card-media">
+              <img src="https://iili.io/qjzUrwG.jpg" alt="Interiores a medida para embarcaciones" />
+            </div>
+            <div class="card-body">
+              <h3>Interiores a medida</h3>
+              <p>Composición personalizada para lograr mayor armonía y confort en cada espacio.</p>
+            </div>
+          </article>
+
+          <article class="card reveal from-left">
+            <div class="card-media">
+              <img src="https://iili.io/qjzUsP2.jpg" alt="Kit mobiliario náutico premium" />
+            </div>
+            <div class="card-body">
+              <h3>Kit mobiliario</h3>
+              <p>Integración visual y funcionalidad en cada detalle del conjunto.</p>
+            </div>
+          </article>
+
+          <article class="card reveal from-right">
+            <div class="card-media">
+              <img src="https://iili.io/qjzUQFS.jpg" alt="Tapizado premium para embarcaciones" />
+            </div>
+            <div class="card-body">
+              <h3>Tapizado premium</h3>
+              <p>Texturas, costuras y terminaciones que elevan la imagen final del interior.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trabajos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Trabajos realizados</span>
+            <h2>Galería de terminaciones</h2>
+          </div>
+          <p>
+            Diferentes piezas y composiciones para mostrar variedad real de trabajos, modelos y detalles.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item big reveal from-left">
+            <img src="https://iili.io/qjzUZc7.jpg" alt="Interior náutico premium completo" />
+            <div class="gallery-caption">
+              <strong>Interior premium</strong>
+              <span>Una presencia más limpia, elegante y bien resuelta en cada sector.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal from-right">
+            <img src="https://iili.io/qjzUtS9.jpg" alt="Detalle de butaca premium" />
+            <div class="gallery-caption">
+              <strong>Butaca destacada</strong>
+              <span>Diseño y soporte con una terminación visual de alto nivel.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item tall reveal from-right">
+            <img src="https://iili.io/qjzUytj.jpg" alt="Toldería y estructura náutica" />
+            <div class="gallery-caption">
+              <strong>Estructura y cobertura</strong>
+              <span>Protección y presencia integradas al conjunto de la embarcación.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal from-left">
+            <img src="https://iili.io/qjzgJMQ.jpg" alt="Conjunto de tapizado premium" />
+            <div class="gallery-caption">
+              <strong>Conjunto tapizado</strong>
+              <span>Unificación visual para un interior más armónico y sofisticado.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item wide reveal from-left">
+            <img src="https://iili.io/qjzgdPV.jpg" alt="Detalle interior a medida" />
+            <div class="gallery-caption">
+              <strong>Trabajo a medida</strong>
+              <span>Cada detalle pensado para mejorar confort, estilo y funcionalidad.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item reveal from-right">
+            <img src="https://iili.io/qjzg3KB.jpg" alt="Terminación premium para embarcación" />
+            <div class="gallery-caption">
+              <strong>Terminación premium</strong>
+              <span>Costuras, materiales y composición con una estética más exclusiva.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="diferenciales">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Diferenciales</span>
+            <h2>Un enfoque pensado para calidad real</h2>
+          </div>
+          <p>
+            Cada proyecto combina diseño, materiales y terminaciones para lograr una imagen más seria, prolija y premium.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card reveal from-left">
+            <strong>Fabricación propia</strong>
+            <p>Mayor control sobre cada pieza, cada ajuste y cada terminación final.</p>
+          </article>
+
+          <article class="value-card reveal from-right">
+            <strong>Diseño a medida</strong>
+            <p>Soluciones adaptadas al estilo, uso y proporción de cada embarcación.</p>
+          </article>
+
+          <article class="value-card reveal from-left">
+            <strong>Terminaciones premium</strong>
+            <p>Detalles que marcan diferencia en presencia, confort y percepción de calidad.</p>
+          </article>
+
+          <article class="value-card reveal from-right">
+            <strong>Atención personalizada</strong>
+            <p>Asesoramiento directo para definir el enfoque más conveniente en cada caso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta-panel reveal from-left">
+          <div>
+            <h3>¿Querés renovar tu embarcación con una terminación premium?</h3>
+            <p>
+              Escribinos por WhatsApp y te asesoramos para encontrar la mejor opción en butacas, toldería e interiores a medida.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/5491164499481?text=Hola!%20Quiero%20consultar%20por%20una%20terminacion%20premium%20para%20mi%20embarcacion." target="_blank" rel="noopener noreferrer">Solicitar asesoramiento</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-box">
+        <p>BMB Premium Boat | Tapicería, interiores y terminaciones premium para embarcaciones.</p>
+        <p class="footer-credit">Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5491164499481?text=Hola!%20Quiero%20consultar%20por%20sus%20productos." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp" />
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const themeToggle = document.getElementById("themeToggle");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+    });
+
+    const savedTheme = localStorage.getItem("bmb-theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      localStorage.setItem("bmb-theme", document.body.classList.contains("light") ? "light" : "dark");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
